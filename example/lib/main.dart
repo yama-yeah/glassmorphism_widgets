@@ -40,10 +40,15 @@ class _MainPageState extends State<MainPage> {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             decoration: BoxDecoration(
-              image: DecorationImage(
+              /*image: DecorationImage(
                 image: AssetImage('img/bg.jpg'),
                 fit: BoxFit.cover,
-              ),
+              ),*/
+              gradient: LinearGradient(colors: [
+                Colors.blue,
+                Colors.yellow,
+                Colors.red,
+              ]),
             ),
           ),
         ),
