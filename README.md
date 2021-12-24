@@ -10,30 +10,146 @@ For general information about developing packages, see the Dart guide for
 and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
+## Abot
+A package containing glassmorphism widgets.  
+You can easy develop glassmorphism App.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## Galley
+<img src="https://user-images.githubusercontent.com/82094614/147371522-76db6662-3945-4470-bad3-1dfec306ccd1.png"></img>
 
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+You should add the following to the `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  glassmorphism_widgets:
+```
+
+You should then run `flutter packages get` in your terminal so as to get the package.<br>
+
+Now import the package in the dart file:
+
+```dart
+import 'package:glassmorphism_widgets/glassmorphism_widgets.dart';
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
+GlassContainer
 ```dart
-const like = 'sample';
+GlassContainer(
+    child: Padding(
+    padding: EdgeInsets.all(8),
+    child: GlassText("Hello World"),
+    ),
+),
 ```
 
-## Additional information
+GlassFlexContainer
+```dart
+Container(
+    height:200,
+    width:200,
+    GlassFlexContainer(
+        child: Padding(
+        padding: EdgeInsets.all(8),
+        child: GlassText("Hello World"),
+        ),
+    ),
+),
+```
+GlassText
+```dart
+GlassText("Hello World"),
+```
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+GlassAppBar
+```dart
+appBar: GlassAppBar(
+    title: GlassText(
+        'Glass Morphic Demo',
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+    ),
+),
+```
+GlassListTile
+```dart
+GlassListTile(
+    leading: GlassIcon(Icons.search),
+    title: TextField(
+        decoration: InputDecoration(
+        hintText: 'Search',
+        border: InputBorder.none,
+        hintStyle: glassTextStyle,
+        ),
+        style: glassTextStyle,
+    ),
+    onTap: () {},
+),
+```
+GlassButton
+```dart
+GlassButton(
+    onPressed: () {
+    showGlassBottomSheet(
+        context: context,
+        child: Center(
+            child: GlassText("Hello World", fontSize: 20)));
+    },
+    child: GlassText("Button"),
+),
+```
+showGlassBottomSheet
+```dart
+showGlassBottomSheet(
+    context: context,
+    child: Center(
+        child: GlassText("Hello World", fontSize: 20)));
+```
+GlassFloatingActionButton
+```dart
+floatingActionButton: GlassFloatingActionButton(
+    onPressed: () {
+        setState(() {
+            index++;
+        });
+    },
+    child: GlassText("$index"),
+),
+```
+GlassBottomBar
+```dart
+bottomNavigationBar: GlassBottomBar(
+            items: [
+              GlassBottomBarItem(
+                icon: Icon(Icons.home),
+                title: GlassText("Home"),
+              ),
+              GlassBottomBarItem(
+                icon: Icon(Icons.search),
+                title: GlassText("Search"),
+              ),
+              GlassBottomBarItem(
+                icon: Icon(Icons.settings),
+                title: GlassText("Settings"),
+              ),
+            ],
+            onTap: (i) {
+              setState(() {
+                index = i;
+              });
+            },
+            currentIndex: index,
+          ),
+```
+GlassIcon
+```dart
+IconButton(
+    icon: GlassIcon(Icons.search),
+    onPressed: () {},
+),
+```
+

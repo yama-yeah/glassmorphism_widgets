@@ -113,30 +113,27 @@ class _MainPageState extends State<MainPage> {
             },
             child: GlassText("$index"),
           ),
-          bottomNavigationBar: Container(
-            //color: Colors.white,
-            child: GlassBottomBar(
-              items: [
-                GlassBottomBarItem(
-                  icon: Icon(Icons.home),
-                  title: GlassText("Home"),
-                ),
-                GlassBottomBarItem(
-                  icon: Icon(Icons.search),
-                  title: GlassText("Search"),
-                ),
-                GlassBottomBarItem(
-                  icon: Icon(Icons.settings),
-                  title: GlassText("Settings"),
-                ),
-              ],
-              onTap: (i) {
-                setState(() {
-                  index = i;
-                });
-              },
-              currentIndex: index,
-            ),
+          bottomNavigationBar: GlassBottomBar(
+            items: [
+              GlassBottomBarItem(
+                icon: Icon(Icons.home),
+                title: GlassText("Home"),
+              ),
+              GlassBottomBarItem(
+                icon: Icon(Icons.search),
+                title: GlassText("Search"),
+              ),
+              GlassBottomBarItem(
+                icon: Icon(Icons.settings),
+                title: GlassText("Settings"),
+              ),
+            ],
+            onTap: (i) {
+              setState(() {
+                index = i;
+              });
+            },
+            currentIndex: index,
           ),
         )
       ],
