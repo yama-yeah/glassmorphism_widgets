@@ -4,8 +4,10 @@ class GlassIcon extends StatelessWidget {
   final IconData icon;
   final Color? color;
   final double opacity;
+  final double? size;
 
-  const GlassIcon(this.icon, {Key? key, this.color, this.opacity = 0.5})
+  const GlassIcon(this.icon,
+      {Key? key, this.size, this.color, this.opacity = 0.5})
       : super(key: key);
 
   @override
@@ -16,7 +18,7 @@ class GlassIcon extends StatelessWidget {
       color: color != null
           ? color!.withOpacity(opacity)
           : Colors.white.withOpacity(opacity),
-      size: 30,
+      size: size,
     );
   }
 }
