@@ -5,3 +5,7 @@
 ## 0.0.2
 
 * change readme and pubspec.yaml to improve score
+
+## 0.0.3
+
+* change readme typo
