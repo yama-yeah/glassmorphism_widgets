@@ -158,6 +158,11 @@ IconButton(
     onPressed: () {},
 ),
 ```
+### How to change widgets gradient?<br>
+You should add parameter linearGradient.
+### How to change widgets shape?<br>
+You should add parameter radius or borderRadius.<br>
+borderRadius takes precedence over radius.<br>
 ## Contact
 If you have anything you want to inform me ([@yama-yeah](https://github.com/yama-yeah)), such as suggestions to enhance this package or functionalities you want etc, feel free to make [issues on GitHub](https://github.com/yama-yeah/glassmorphism_widgets/issues)
 https://github.com/yama-yeah/glassmorphism_widgets/issues

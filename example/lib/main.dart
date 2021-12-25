@@ -48,7 +48,7 @@ class _MainPageState extends State<MainPage> {
                 Colors.blue,
                 Colors.yellow,
                 Colors.red,
-              ]),
+              ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
             ),
           ),
         ),
@@ -123,6 +123,13 @@ class _MainPageState extends State<MainPage> {
               GlassBottomBarItem(
                 icon: Icon(Icons.home),
                 title: GlassText("Home"),
+                selectedGradient: LinearGradient(
+                  colors: [
+                    Colors.blue.withOpacity(0.5),
+                    Colors.yellow.withOpacity(0.5),
+                    Colors.red.withOpacity(0.5),
+                  ],
+                ),
               ),
               GlassBottomBarItem(
                 icon: Icon(Icons.search),
