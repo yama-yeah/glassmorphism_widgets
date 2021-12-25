@@ -21,3 +21,6 @@
 ## 0.0.6
 
 * add problem information
+
+## 0.0.7
+* fix readme
