@@ -27,3 +27,5 @@
 
 ## 0.0.8
 * fix GlassBottomBar's bug
+## 0.0.9
+* fix GlassIcon's missing parameter
