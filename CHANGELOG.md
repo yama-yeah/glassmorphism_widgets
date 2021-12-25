@@ -17,3 +17,7 @@
 ## 0.0.5
 
 * fix sdk version
+
+## 0.0.6
+
+* add problem information

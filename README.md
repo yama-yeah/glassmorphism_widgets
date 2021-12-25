@@ -13,11 +13,11 @@ and the Flutter guide for
 ## Problem
 Master Channel cannot use GlassFloatingActionButton.
 ## About
-This package allows you to easily create a Glassmorphism UI.
-The AppBar, ListTile, and even the BottomNavigationBar work like Material Design widgets.
-The color, shape, and size of the glass are all up to you.
-Create your ideal Glassmorphism App!
-This package currently supports only stable channels.
+This package allows you to easily create a Glassmorphism UI.<br>
+The AppBar, ListTile, and even the BottomNavigationBar work like Material Design widgets.<br>
+The color, shape, and size of the glass are all up to you.<br>
+Create your ideal Glassmorphism App!<br>
+This package currently supports only stable channel.
 
 ## Gallery
 <img src="https://user-images.githubusercontent.com/82094614/147371522-76db6662-3945-4470-bad3-1dfec306ccd1.png"></img>
