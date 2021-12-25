@@ -8,7 +8,7 @@
 
 ## 0.0.3
 
-* change readme typo
+* fix readme typo
 
 ## 0.0.4
 
