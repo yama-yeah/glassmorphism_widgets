@@ -13,3 +13,7 @@
 ## 0.0.4
 
 * improve readme
+
+## 0.0.5
+
+* fix sdk version

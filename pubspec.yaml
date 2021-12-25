@@ -1,11 +1,11 @@
 name: glassmorphism_widgets
 description: A set of widgets for use in Flutter apps. You can too easy custom and develop glass morphism widgets.
-version: 0.0.4
+version: 0.0.5
 homepage: https://zenn.dev/antman
 repository: https://github.com/yama-yeah/glassmorphism_widgets
 
 environment:
-  sdk: ">=2.15.0 <3.0.0"
+  sdk: ">=2.14.0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
