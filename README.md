@@ -10,11 +10,13 @@ For general information about developing packages, see the Dart guide for
 and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
-## Abot
-A package containing glassmorphism widgets.  
-You can easy develop glassmorphism App.
+## About
+This package allows you to easily create a Glassmorphism UI.
+The AppBar, ListTile, and even the BottomNavigationBar work like Material Design widgets.
+The color, shape, and size of the glass are all up to you.
+Create your ideal Glassmorphism App!
 
-## Galley
+## Gallery
 <img src="https://user-images.githubusercontent.com/82094614/147371522-76db6662-3945-4470-bad3-1dfec306ccd1.png"></img>
 
 
@@ -36,6 +38,7 @@ import 'package:glassmorphism_widgets/glassmorphism_widgets.dart';
 ```
 
 ## Usage
+Here is an example of how to use Glassmorphism Widgets.
 
 GlassContainer
 ```dart
