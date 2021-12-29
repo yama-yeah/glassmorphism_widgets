@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 
 class GlassBorder extends StatelessWidget {
-  final _GradientPainter _painter;
-  final BorderRadius _borderRadius;
-  final double? width;
-  final double? height;
   GlassBorder({
     Key? key,
     required double strokeWidth,
@@ -18,6 +14,11 @@ class GlassBorder extends StatelessWidget {
             gradient: gradient),
         _borderRadius = borderRadius,
         super(key: key);
+
+  final _GradientPainter _painter;
+  final BorderRadius _borderRadius;
+  final double? width;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {

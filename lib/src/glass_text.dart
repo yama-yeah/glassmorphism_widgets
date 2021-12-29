@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 
 class GlassText extends StatelessWidget {
-  final String data;
-  final TextStyle? style;
-  final double opacity;
-  final double? fontSize;
-  final FontWeight fontWeight;
-  final Color color;
   const GlassText(
     this.data, {
     this.style,
@@ -16,6 +10,13 @@ class GlassText extends StatelessWidget {
     this.fontWeight = FontWeight.bold,
     Key? key,
   }) : super(key: key);
+
+  final String data;
+  final TextStyle? style;
+  final double opacity;
+  final double? fontSize;
+  final FontWeight fontWeight;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {

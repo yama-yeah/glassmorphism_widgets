@@ -17,7 +17,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MainPage(),
+      home: GlassTheme(
+        data: GlassThemeData(radius: 10),
+        child: MainPage(),
+      ),
+      //MainPage(),
     );
   }
 }
@@ -33,6 +37,7 @@ class _MainPageState extends State<MainPage> {
   int index = 0;
   @override
   Widget build(BuildContext context) {
+    print(GlassTheme.of(context).radius);
     return Stack(
       children: [
         Scaffold(
