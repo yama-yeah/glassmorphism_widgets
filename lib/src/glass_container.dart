@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:glassmorphism_widgets/src/glass_theme.dart';
 
 import 'glass_border.dart';
 
@@ -22,41 +23,37 @@ class GlassContainer extends StatefulWidget {
     this.clipBehavior = Clip.none,*/
   GlassContainer({
     Key? key,
-    this.alignment = Alignment.topLeft,
+    this.alignment,
     this.padding,
     this.linearGradient,
     this.borderGradient,
-    double? blur,
+    this.blur,
     this.width,
     this.height,
     this.constraints,
     this.margin,
     this.transform,
     this.transformAlignment,
-    double? radius,
-    double? border,
-    BorderRadius? borderRadius,
+    this.radius,
+    this.border,
+    this.borderRadius,
     this.child,
-  })  : radius = radius ?? 20,
-        border = border ?? 2,
-        blur = blur ?? 20,
-        borderRadius = borderRadius ?? BorderRadius.circular(radius ?? 20),
-        super(key: key);
+  }) : super(key: key);
 
   final EdgeInsetsGeometry? padding;
-  final AlignmentGeometry alignment;
+  final AlignmentGeometry? alignment;
   final AlignmentGeometry? transformAlignment;
 
   final EdgeInsetsGeometry? margin;
   final Matrix4? transform;
 
   final Widget? child;
-  final double radius;
-  final double border;
-  final double blur;
+  final double? radius;
+  final double? border;
+  final double? blur;
   final LinearGradient? linearGradient;
   final LinearGradient? borderGradient;
-  final BorderRadius borderRadius;
+  final BorderRadius? borderRadius;
   final double? width;
   final double? height;
   final BoxConstraints? constraints;
@@ -81,9 +78,18 @@ class _GlassContainerState extends State<GlassContainer> {
       }
       //print(_contentKey.currentContext?.size);
     });
+    final linearGradient =
+        widget.linearGradient ?? GlassTheme.of(context).linearGradient;
+    final borderGradient =
+        widget.borderGradient ?? GlassTheme.of(context).borderGradient;
+    final blur = widget.blur ?? GlassTheme.of(context).blur;
+    final border = widget.border ?? GlassTheme.of(context).border;
+    final borderRadius =
+        widget.borderRadius ?? GlassTheme.of(context).borderRadius;
+    final alignment = widget.alignment;
     return Container(
       key: widget.key,
-      alignment: widget.alignment,
+      //alignment: widget.alignment,
       padding: widget.padding,
       width: widget.width,
       height: widget.height,
@@ -97,37 +103,22 @@ class _GlassContainerState extends State<GlassContainer> {
             width: widget.width ?? size?.width,
             height: widget.height ?? size?.height,
             child: Stack(
-              alignment: widget.alignment,
+              alignment: Alignment.topLeft,
               children: [
                 size != null
                     ? ClipRRect(
                         clipBehavior: Clip.hardEdge,
-                        borderRadius: widget.borderRadius,
+                        borderRadius: borderRadius,
                         child: SizedBox(
                           width: widget.width ?? size?.width,
                           height: widget.height ?? size?.height,
                           child: BackdropFilter(
                             filter: ImageFilter.blur(
-                                sigmaX: widget.blur, sigmaY: widget.blur * 2),
+                                sigmaX: blur, sigmaY: blur * 2),
                             child: Container(
                               decoration: BoxDecoration(
-                                borderRadius: widget.borderRadius,
-                                gradient: widget.linearGradient ??
-                                    LinearGradient(
-                                      begin: Alignment.topLeft,
-                                      end: Alignment.bottomRight,
-                                      colors: [
-                                        const Color(0xFFffffff)
-                                            .withOpacity(0.1),
-                                        const Color(0xFFFFFFFF)
-                                            .withOpacity(0.05),
-                                      ],
-                                      stops: const [
-                                        0.1,
-                                        1,
-                                      ],
-                                    ),
-                              ),
+                                  borderRadius: borderRadius,
+                                  gradient: linearGradient),
                               width: widget.width ?? size?.width,
                               height: widget.height ?? size?.height,
                             ),
@@ -141,19 +132,11 @@ class _GlassContainerState extends State<GlassContainer> {
                         height: widget.height ?? size?.height,
                         width: widget.width ?? size?.width,
                         child: GlassBorder(
-                          strokeWidth: widget.border,
-                          borderRadius: widget.borderRadius,
+                          strokeWidth: border,
+                          borderRadius: borderRadius,
                           width: widget.width ?? size?.width,
                           height: widget.height ?? size?.height,
-                          gradient: widget.borderGradient ??
-                              LinearGradient(
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                                colors: [
-                                  const Color(0xFFffffff).withOpacity(0.5),
-                                  const Color(0xFFFFFFFF).withOpacity(0.5),
-                                ],
-                              ),
+                          gradient: borderGradient,
                         ),
                       ),
               ],
@@ -161,7 +144,7 @@ class _GlassContainerState extends State<GlassContainer> {
           ),
           ClipRRect(
             clipBehavior: Clip.hardEdge,
-            borderRadius: widget.borderRadius,
+            borderRadius: borderRadius,
             child: Container(
               height: widget.height,
               key: _contentKey,

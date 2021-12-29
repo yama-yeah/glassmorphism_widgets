@@ -15,3 +15,4 @@ export 'src/glass_text_style.dart';
 export 'src/show_glass_bottom_sheet.dart';
 export 'src/glass_theme.dart';
 export 'src/glass_theme_data.dart';
+export 'src/glass_app.dart';
