@@ -75,20 +75,13 @@ class _MyHomePageState extends State<MyHomePage> {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             decoration: BoxDecoration(
-
               image: DecorationImage(
                 image: Image.network("https://picsum.photos/" +
                         "${MediaQuery.of(context).size.width.toInt()}/" +
                         "${MediaQuery.of(context).size.height.toInt()}")
                     .image,
-
                 fit: BoxFit.cover,
-              ),*/
-              gradient: LinearGradient(colors: [
-                Colors.blue,
-                Colors.yellow,
-                Colors.red,
-              ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+              ),
             ),
           ),
         ),

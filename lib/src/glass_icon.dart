@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class GlassIcon extends StatelessWidget {
-  const GlassIcon(this.icon, {Key? key, this.color, this.opacity = 0.5})
+  const GlassIcon(this.icon,
+      {Key? key, this.size, this.color, this.opacity = 0.5})
       : super(key: key);
 
   final IconData icon;
   final Color? color;
   final double opacity;
   final double? size;
-
 
   @override
   Widget build(BuildContext context) {
