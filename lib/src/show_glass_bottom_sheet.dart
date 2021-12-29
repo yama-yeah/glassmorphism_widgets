@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:glassmorphism_widgets/src/glass_container.dart';
-import 'glass_flex_container.dart';
 
 void showGlassBottomSheet({
   required BuildContext context,
@@ -11,12 +10,12 @@ void showGlassBottomSheet({
   double? blur,
   BorderRadius? borderRadius,
 }) {
-  showModalBottomSheet(
+  showModalBottomSheet<void>(
     context: context,
     backgroundColor: Colors.transparent,
     barrierColor: Colors.black.withOpacity(0.2),
     builder: (BuildContext ctx) {
-      BorderRadius _borderRadius = borderRadius ??
+      final _borderRadius = borderRadius ??
           BorderRadius.only(
             topLeft: Radius.circular(radius),
             topRight: Radius.circular(radius),

@@ -3,13 +3,6 @@ import 'package:flutter/material.dart';
 import 'glass_container.dart';
 
 class GlassAppBar extends StatelessWidget with PreferredSizeWidget {
-  final double? radius;
-  final double? border;
-  final double? blur;
-  final LinearGradient? linearGradient;
-  final LinearGradient? borderGradient;
-  final BorderRadius? borderRadius;
-  final List<Widget>? actions;
   GlassAppBar({
     Key? key,
     this.leading,
@@ -24,6 +17,14 @@ class GlassAppBar extends StatelessWidget with PreferredSizeWidget {
     this.actions,
   })  : preferredSize = const Size.fromHeight(kToolbarHeight),
         super(key: key);
+
+  final double? radius;
+  final double? border;
+  final double? blur;
+  final LinearGradient? linearGradient;
+  final LinearGradient? borderGradient;
+  final BorderRadius? borderRadius;
+  final List<Widget>? actions;
 
   final Widget? leading;
   final Widget? title;

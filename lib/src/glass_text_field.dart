@@ -14,7 +14,7 @@ class GlassTextField extends StatelessWidget {
         filled: true,
         fillColor: Colors.white,
         hintText: 'Enter your email',
-        prefixIcon: Icon(Icons.email),
+        prefixIcon: const Icon(Icons.email),
       ),
     );
   }
