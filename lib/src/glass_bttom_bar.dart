@@ -82,8 +82,14 @@ class GlassBottomBar extends StatelessWidget {
 
                 return GlassContainer(
                   linearGradient: LinearGradient.lerp(
-                      _selectedGradient, _unselectedGradient, t),
+                      _unselectedGradient, _selectedGradient, t),
                   alignment: Alignment.bottomLeft,
+                  radius: item.radius,
+                  border: item.border,
+                  blur: item.blur,
+                  borderRadius: item.borderRadius,
+                  borderGradient: LinearGradient.lerp(
+                      _unselectedGradient, _selectedGradient, t),
                   child: Material(
                     /*color: Color.lerp(
                           _selectedColor.withOpacity(0.0),
@@ -173,6 +179,13 @@ class GlassBottomBar extends StatelessWidget {
 
 /// A tab to display in a [GlassBottomBar]
 class GlassBottomBarItem {
+  final double? radius;
+  final double? border;
+  final double? blur;
+  final LinearGradient? selectedBorderGradient;
+  final LinearGradient? unselectedBorderGradient;
+  final BorderRadius? borderRadius;
+
   /// An icon to display.
   final Widget icon;
 
@@ -205,6 +218,12 @@ class GlassBottomBarItem {
     this.unselectedGradient,
     this.selectedIconColorOpacity = 0.5,
     this.unselectedIconColorOpacity = 0.6,
+    this.radius,
+    this.border,
+    this.blur,
+    this.selectedBorderGradient,
+    this.unselectedBorderGradient,
+    this.borderRadius,
     this.activeIcon,
   });
 }

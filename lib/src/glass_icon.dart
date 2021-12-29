@@ -7,6 +7,8 @@ class GlassIcon extends StatelessWidget {
   final IconData icon;
   final Color? color;
   final double opacity;
+  final double? size;
+
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class GlassIcon extends StatelessWidget {
       color: color != null
           ? color!.withOpacity(opacity)
           : Colors.white.withOpacity(opacity),
-      size: 30,
+      size: size,
     );
   }
 }

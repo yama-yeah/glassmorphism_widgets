@@ -55,3 +55,5 @@ src/glass_text_field.dart
 example/.firebaserc
 example/firebase.json
 example/.firebase
+
+example/build/
