@@ -1,31 +1,37 @@
-## 0.0.1
+## 0.1.0
+* add some widget(GlassApp,GlassTheme,GlassThemeData).
 
-* initial release.
+## 0.0.9
+* fix GlassIcon's missing parameter
 
-## 0.0.2
+## 0.0.8
+* fix GlassBottomBar's bug
 
-* change readme and pubspec.yaml to improve score
-
-## 0.0.3
-
-* fix readme typo
-
-## 0.0.4
-
-* improve readme
-
-## 0.0.5
-
-* fix sdk version
+## 0.0.7
+* fix readme
 
 ## 0.0.6
 
 * add problem information
 
-## 0.0.7
-* fix readme
+## 0.0.5
 
-## 0.0.8
-* fix GlassBottomBar's bug
-## 0.0.9
-* fix GlassIcon's missing parameter
+* fix sdk version
+
+## 0.0.4
+
+* improve readme
+
+## 0.0.3
+
+* fix readme typo
+
+## 0.0.2
+
+* change readme and pubspec.yaml to improve score
+
+
+## 0.0.1
+
+* initial release.
+
