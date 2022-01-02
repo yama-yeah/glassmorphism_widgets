@@ -10,17 +10,16 @@ For general information about developing packages, see the Dart guide for
 and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
-## Problem
-Master Channel cannot use GlassFloatingActionButton.
+
+## Glassmorphism Widgets 
+<img src="https://user-images.githubusercontent.com/82094614/147371522-76db6662-3945-4470-bad3-1dfec306ccd1.png"></img>
+
 ## About
 This package allows you to easily create a Glassmorphism UI.<br>
 The AppBar, ListTile, and even the BottomNavigationBar work like Material Design widgets.<br>
 The color, shape, and size of the glass are all up to you.<br>
 Create your ideal Glassmorphism App!<br>
 This package currently supports only stable channel.
-
-## Gallery
-<img src="https://user-images.githubusercontent.com/82094614/147371522-76db6662-3945-4470-bad3-1dfec306ccd1.png"></img>
 
 
 ## Getting started
@@ -41,19 +40,23 @@ import 'package:glassmorphism_widgets/glassmorphism_widgets.dart';
 ```
 
 ## Usage
-Here is an example of how to use Glassmorphism Widgets.
+Here is an example of how to use Glassmorphism Widgets.<br>
+Many of the parameters are based on the original Material Design widget.<br>
+If you want to know glass specific parameter.<br>
+You should look [here](#a-specific-Glass-widget-parameter).
 
-GlassContainer
+### GlassContainer<br>
+a simple glass container.
 ```dart
 GlassContainer(
     child: Padding(
-    padding: EdgeInsets.all(8),
-    child: GlassText("Hello World"),
+      padding: EdgeInsets.all(8),
+      child: GlassText("Hello World"),
     ),
 ),
 ```
 
-GlassFlexContainer
+### GlassFlexContainer<br>
 ```dart
 Container(
     height:200,
@@ -66,12 +69,39 @@ Container(
     ),
 ),
 ```
-GlassText
+### GlassApp & GlassThemeData
+If you want to change glass widgets look all together.<br>
+You should use GlassApp and GlassThemeData.
+```dart
+GlassApp(
+  theme: GlassThemeData(
+    blur: 10,
+  ),
+  home: MaterialApp(
+    title: 'Flutter Demo',
+    theme: ThemeData(
+      primarySwatch: Colors.blue,
+    ),
+    home: const MyHomePage(title: 'Flutter Demo Home Page'),
+  ),
+)
+```
+
+### GlassTheme
+If you want to access GlassThemeData.<br>
+You should use GlassTheme.
+```dart
+GlassThemeData data = GlassTheme.of(context);
+```
+
+### GlassText
+It is a thin white text.
 ```dart
 GlassText("Hello World"),
 ```
 
-GlassAppBar
+### GlassAppBar
+a simple glass app bar.
 ```dart
 appBar: GlassAppBar(
     title: GlassText(
@@ -81,7 +111,8 @@ appBar: GlassAppBar(
     ),
 ),
 ```
-GlassListTile
+### GlassListTile
+a simple glass list tile
 ```dart
 GlassListTile(
     leading: GlassIcon(Icons.search),
@@ -96,7 +127,8 @@ GlassListTile(
     onTap: () {},
 ),
 ```
-GlassButton
+### GlassButton
+a simple glass button
 ```dart
 GlassButton(
     onPressed: () {
@@ -108,14 +140,15 @@ GlassButton(
     child: GlassText("Button"),
 ),
 ```
-showGlassBottomSheet
+### showGlassBottomSheet
+Display bottom sheet like glass
 ```dart
 showGlassBottomSheet(
     context: context,
     child: Center(
         child: GlassText("Hello World", fontSize: 20)));
 ```
-GlassFloatingActionButton
+### GlassFloatingActionButton
 ```dart
 floatingActionButton: GlassFloatingActionButton(
     onPressed: () {
@@ -126,7 +159,7 @@ floatingActionButton: GlassFloatingActionButton(
     child: GlassText("$index"),
 ),
 ```
-GlassBottomBar
+### GlassBottomBar
 ```dart
 bottomNavigationBar: GlassBottomBar(
             items: [
@@ -151,18 +184,26 @@ bottomNavigationBar: GlassBottomBar(
             currentIndex: index,
           ),
 ```
-GlassIcon
+### GlassIcon
 ```dart
 IconButton(
     icon: GlassIcon(Icons.search),
     onPressed: () {},
 ),
 ```
-### How to change widgets gradient?<br>
+## a specific Glass widget parameter
+### How to change widgets gradient?
 You should add parameter linearGradient.
-### How to change widgets shape?<br>
+
+### How to change widgets shape?
 You should add parameter radius or borderRadius.<br>
-borderRadius takes precedence over radius.<br>
+borderRadius takes precedence over radius.
+
+### I want to create more clear glass or more frosted glass
+You should add parameter blur.<br>
+If you set blur lower value. GlassWidgets will become clear.
+## Problem
+Master Channel cannot use GlassFloatingActionButton.
+
 ## Contact
 If you have anything you want to inform me ([@yama-yeah](https://github.com/yama-yeah)), such as suggestions to enhance this package or functionalities you want etc, feel free to make [issues on GitHub](https://github.com/yama-yeah/glassmorphism_widgets/issues)
-https://github.com/yama-yeah/glassmorphism_widgets/issues
