@@ -38,14 +38,14 @@ class GlassBorder extends StatelessWidget {
 }
 
 class _GradientPainter extends CustomPainter {
-  final double strokeWidth;
-  final Gradient gradient;
-  final BorderRadius borderRadius;
-
   _GradientPainter(
       {required this.strokeWidth,
       required this.borderRadius,
       required this.gradient});
+
+  final double strokeWidth;
+  final Gradient gradient;
+  final BorderRadius borderRadius;
   final Paint paintObject = Paint();
 
   @override
