@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'glass_container.dart';
 
+/// A GlassButton is a button that draws a glass effect.
 class GlassButton extends StatelessWidget {
   final double? radius;
   final double? border;

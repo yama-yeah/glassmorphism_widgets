@@ -6,6 +6,7 @@ import 'package:glassmorphism_widgets/src/glass_theme.dart';
 
 import 'glass_border.dart';
 
+/// A GlassContainer is a container that draws a glass effect.
 class GlassContainer extends StatefulWidget {
   /*Key? key,
     this.alignment,
@@ -21,7 +22,7 @@ class GlassContainer extends StatefulWidget {
     this.transformAlignment,
     this.child,
     this.clipBehavior = Clip.none,*/
-  GlassContainer({
+  const GlassContainer({
     Key? key,
     this.alignment,
     this.padding,
@@ -67,10 +68,11 @@ class _GlassContainerState extends State<GlassContainer> {
 
   BuildContext? contentBox;
   Size? size;
+  WidgetsBinding? get _widgetsBindingInstance => WidgetsBinding.instance;
 
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    _widgetsBindingInstance?.addPostFrameCallback((_) {
       if (size != _contentKey.currentContext?.size) {
         setState(() {
           size = _contentKey.currentContext?.size;
@@ -84,9 +86,11 @@ class _GlassContainerState extends State<GlassContainer> {
         widget.borderGradient ?? GlassTheme.of(context).borderGradient;
     final blur = widget.blur ?? GlassTheme.of(context).blur;
     final border = widget.border ?? GlassTheme.of(context).border;
-    final borderRadius =
-        widget.borderRadius ?? GlassTheme.of(context).borderRadius;
-    final alignment = widget.alignment;
+    final borderRadius = widget.borderRadius == null
+        ? widget.radius == null
+            ? GlassTheme.of(context).borderRadius
+            : BorderRadius.circular(widget.radius!)
+        : widget.borderRadius!;
     return Container(
       key: widget.key,
       //alignment: widget.alignment,
@@ -97,67 +101,69 @@ class _GlassContainerState extends State<GlassContainer> {
       margin: widget.margin,
       transform: widget.transform,
       transformAlignment: widget.transformAlignment,
-      child: Stack(
-        children: [
-          SizedBox(
-            width: widget.width ?? size?.width,
-            height: widget.height ?? size?.height,
-            child: Stack(
-              alignment: Alignment.topLeft,
-              children: [
-                size != null
-                    ? ClipRRect(
-                        clipBehavior: Clip.hardEdge,
-                        borderRadius: borderRadius,
-                        child: SizedBox(
-                          width: widget.width ?? size?.width,
-                          height: widget.height ?? size?.height,
-                          child: BackdropFilter(
-                            filter: ImageFilter.blur(
-                                sigmaX: blur, sigmaY: blur * 2),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: borderRadius,
-                                  gradient: linearGradient),
+      child: ClipRRect(
+        borderRadius: borderRadius,
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: blur, sigmaY: blur * 2),
+          child: Stack(
+            children: [
+              SizedBox(
+                width: widget.width ?? size?.width,
+                height: widget.height ?? size?.height,
+                child: Stack(
+                  alignment: Alignment.topLeft,
+                  children: [
+                    size != null
+                        ? ClipRRect(
+                            clipBehavior: Clip.hardEdge,
+                            borderRadius: borderRadius,
+                            child: SizedBox(
                               width: widget.width ?? size?.width,
                               height: widget.height ?? size?.height,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: borderRadius,
+                                    gradient: linearGradient),
+                                width: widget.width ?? size?.width,
+                                height: widget.height ?? size?.height,
+                              ),
+                            ),
+                          )
+                        : const Text(''),
+                    size == null
+                        ? const Text('')
+                        : SizedBox(
+                            height: widget.height ?? size?.height,
+                            width: widget.width ?? size?.width,
+                            child: GlassBorder(
+                              strokeWidth: border,
+                              borderRadius: borderRadius,
+                              width: widget.width ?? size?.width,
+                              height: widget.height ?? size?.height,
+                              gradient: borderGradient,
                             ),
                           ),
-                        ),
-                      )
-                    : const Text(''),
-                size == null
-                    ? const Text('')
-                    : SizedBox(
-                        height: widget.height ?? size?.height,
-                        width: widget.width ?? size?.width,
-                        child: GlassBorder(
-                          strokeWidth: border,
-                          borderRadius: borderRadius,
-                          width: widget.width ?? size?.width,
-                          height: widget.height ?? size?.height,
-                          gradient: borderGradient,
-                        ),
-                      ),
-              ],
-            ),
+                  ],
+                ),
+              ),
+              ClipRRect(
+                clipBehavior: Clip.hardEdge,
+                borderRadius: borderRadius,
+                child: SizedBox(
+                  height: widget.height,
+                  key: _contentKey,
+                  width: widget.width,
+                  //alignment: Alignment.topCenter,
+                  //alignment: widget.alignment,
+                  //alignment: widget.alignment,
+                  //color: Colors.red,
+                  //color: Colors.red,
+                  child: widget.child,
+                ),
+              ),
+            ],
           ),
-          ClipRRect(
-            clipBehavior: Clip.hardEdge,
-            borderRadius: borderRadius,
-            child: Container(
-              height: widget.height,
-              key: _contentKey,
-              width: widget.width,
-              //alignment: Alignment.topCenter,
-              //alignment: widget.alignment,
-              //alignment: widget.alignment,
-              //color: Colors.red,
-              //color: Colors.red,
-              child: widget.child,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

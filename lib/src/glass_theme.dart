@@ -6,9 +6,7 @@ class GlassTheme extends StatelessWidget {
     Key? key,
     required this.data,
     required this.child,
-  })  : assert(child != null),
-        assert(data != null),
-        super(key: key);
+  }) : super(key: key);
   final Widget child;
   final GlassThemeData data;
   static final GlassThemeData _kFallbackTheme = GlassThemeData.fallback();
@@ -16,10 +14,6 @@ class GlassTheme extends StatelessWidget {
   static GlassThemeData of(BuildContext context) {
     final _InheritedGlassTheme? inheritedTheme =
         context.dependOnInheritedWidgetOfExactType<_InheritedGlassTheme>();
-    final MaterialLocalizations? localizations =
-        Localizations.of<MaterialLocalizations>(context, MaterialLocalizations);
-    final ScriptCategory category =
-        localizations?.scriptCategory ?? ScriptCategory.englishLike;
     final GlassThemeData theme = inheritedTheme?.theme.data ?? _kFallbackTheme;
     return GlassThemeData.localize(theme);
   }
@@ -38,8 +32,7 @@ class _InheritedGlassTheme extends InheritedWidget {
     Key? key,
     required this.theme,
     required Widget child,
-  })  : assert(theme != null),
-        super(key: key, child: child);
+  }) : super(key: key, child: child);
   final GlassTheme theme;
 
   @override

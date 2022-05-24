@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+/// A GlassThemeData is a theme for a GlassWidgets.
 class GlassThemeData with Diagnosticable {
   factory GlassThemeData({
     double? radius,
@@ -143,8 +144,7 @@ class _IdentityGlassThemeDataCacheKey {
 }
 
 class _FifoCache<K, V> {
-  _FifoCache(this._maximumSize)
-      : assert(_maximumSize != null && _maximumSize > 0);
+  _FifoCache(this._maximumSize) : assert(_maximumSize > 0);
 
   /// In Dart the map literal uses a linked hash-map implementation, whose keys
   /// are stored such that [Map.keys] returns them in the order they were
@@ -163,7 +163,6 @@ class _FifoCache<K, V> {
   /// The arguments must not be null.
   V putIfAbsent(K key, V Function() loader) {
     assert(key != null);
-    assert(loader != null);
     final V? result = _cache[key];
     if (result != null) return result;
     if (_cache.length == _maximumSize) _cache.remove(_cache.keys.first);

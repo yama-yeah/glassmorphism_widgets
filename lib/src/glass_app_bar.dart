@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'glass_container.dart';
 
+/// A GlassAppBar is a Material Design app bar that is like a [AppBar] but
+/// with glass effect.
 class GlassAppBar extends StatelessWidget with PreferredSizeWidget {
   GlassAppBar({
     Key? key,
@@ -35,20 +37,21 @@ class GlassAppBar extends StatelessWidget with PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      backgroundColor: Colors.transparent,
-      flexibleSpace: GlassContainer(
-        radius: radius ?? 0,
-        border: border,
-        blur: blur,
-        linearGradient: linearGradient,
-        borderGradient: borderGradient,
-        borderRadius: borderRadius,
+    return GlassContainer(
+      radius: radius ?? 0,
+      border: border,
+      blur: blur,
+      linearGradient: linearGradient,
+      borderGradient: borderGradient,
+      borderRadius: borderRadius,
+      child: AppBar(
+        backgroundColor: Colors.transparent,
+        shadowColor: Colors.transparent,
+        leading: leading,
+        title: title,
+        centerTitle: centerTitle,
+        actions: actions,
       ),
-      leading: leading,
-      title: title,
-      centerTitle: centerTitle,
-      actions: actions,
     );
   }
 }

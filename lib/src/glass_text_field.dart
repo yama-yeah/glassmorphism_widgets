@@ -5,7 +5,6 @@ class GlassTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return TextField(
       decoration: InputDecoration(
         border: OutlineInputBorder(

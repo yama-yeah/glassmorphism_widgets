@@ -1,3 +1,9 @@
+## 0.1.11
+* delate warning message(Warning: Operand of null-aware operation '?.' has type 'WidgetsBinding' which excludes null.).
+* fix some bugs
+    - app bar's color.
+    - bottom bar's gradient isn't reflect.
+    - touch action.
 ## 0.1.0
 * add some widget(GlassApp,GlassTheme,GlassThemeData).
 
