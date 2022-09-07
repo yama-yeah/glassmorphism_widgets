@@ -59,8 +59,6 @@ class _MyHomePageState extends State<MyHomePage> {
       children: [
         Scaffold(
           body: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: Image.network(
