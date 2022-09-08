@@ -5,17 +5,17 @@ name: Publish package on push
       - master
 
 jobs:
-  publish:
-
+  build:
     runs-on: ubuntu-latest
-
+    container:
+      image:  google/dart:latest
     steps:
-      - name: Check out
-        uses: actions/checkout@v1
-      - name: Publish
-        uses: sakebook/actions-flutter-pub-publisher@v1.4.1
-        with:
-          credential: ${{ secrets.CREDENTIAL_JSON }}
-          flutter_package: false
-          skip_test: true
-          dry_run: false
+    - uses: actions/checkout@v1
+    - name: Setup credentials
+      run: | 
+        mkdir -p ~/.pub-cache 
+        cat <<EOF > ~/.pub-cache/credentials.json
+        ${{ secrets.CREDENTIAL_JSON }}
+        EOF
+    - name: Publish package
+      run: pub publish -f
