@@ -1,0 +1,21 @@
+name: Publish package on push
+'on':
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: dry run
+        uses: actions/checkout@v1
+      - name: Publish
+        uses: sakebook/actions-flutter-pub-publisher@v1.4.1
+        with:
+          credential: ${{ secrets.CREDENTIAL_JSON }}
+          flutter_package: false
+          skip_test: true
+          dry_run: true
