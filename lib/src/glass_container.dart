@@ -74,9 +74,11 @@ class _GlassContainerState extends State<GlassContainer> {
   Widget build(BuildContext context) {
     _widgetsBindingInstance?.addPostFrameCallback((_) {
       if (size != _contentKey.currentContext?.size) {
-        setState(() {
-          size = _contentKey.currentContext?.size;
-        });
+        if (mounted) {
+          setState(() {
+            size = _contentKey.currentContext?.size;
+          });
+        }
       }
       //print(_contentKey.currentContext?.size);
     });

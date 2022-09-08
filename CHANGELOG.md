@@ -1,4 +1,8 @@
-## 0.1.11
+## 0.1.2
+* fix glass border's size parameter
+* fix glass container's setState timing
+
+## 0.1.1
 * delate warning message(Warning: Operand of null-aware operation '?.' has type 'WidgetsBinding' which excludes null.).
 * fix some bugs
     - app bar's color.

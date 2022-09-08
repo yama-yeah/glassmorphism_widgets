@@ -1,0 +1,21 @@
+name: Publish package on push
+'on':
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image:  google/dart:latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup credentials
+      run: | 
+        mkdir -p ~/.pub-cache 
+        cat <<EOF > ~/.pub-cache/credentials.json
+        ${{ secrets.CREDENTIAL_JSON }}
+        EOF
+    - name: Publish package
+      run: pub publish -f

@@ -22,10 +22,12 @@ class GlassBorder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = width != null && height != null
+        ? Size(width!, height!)
+        : MediaQuery.of(context).size;
     return CustomPaint(
       painter: _painter,
-      size: MediaQuery.of(context).size,
-      //Size(width, height),
+      size: size,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: _borderRadius,
