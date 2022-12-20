@@ -1,3 +1,6 @@
+## 0.1.4
+* added heroTag in GlassFloatingActionButton
+
 ## 0.1.3
 * add example for pub.dev
 
