@@ -1,3 +1,6 @@
+## 0.1.3
+* add example for pub.dev
+
 ## 0.1.2
 * fix glass border's size parameter
 * fix glass container's setState timing
