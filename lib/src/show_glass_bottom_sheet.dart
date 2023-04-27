@@ -15,11 +15,6 @@ void showGlassBottomSheet({
     backgroundColor: Colors.transparent,
     barrierColor: Colors.black.withOpacity(0.2),
     builder: (BuildContext ctx) {
-      final _borderRadius = borderRadius ??
-          BorderRadius.only(
-            topLeft: Radius.circular(radius),
-            topRight: Radius.circular(radius),
-          );
       return GlassContainer(
         radius: radius,
         blur: blur,

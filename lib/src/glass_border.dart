@@ -59,7 +59,7 @@ class _GradientPainter extends CustomPainter {
 
     Radius isMinus(double x, double y) {
       if (x < 0 || y < 0) {
-        return Radius.circular(0);
+        return const Radius.circular(0);
       } else {
         return Radius.elliptical(x, y);
       }
