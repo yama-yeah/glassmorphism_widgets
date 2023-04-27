@@ -21,7 +21,7 @@ void showGlassBottomSheet({
             topRight: Radius.circular(radius),
           );
       return GlassContainer(
-        borderRadius: _borderRadius,
+        radius: radius,
         blur: blur,
         linearGradient: linearGradient,
         borderGradient: borderGradient,
