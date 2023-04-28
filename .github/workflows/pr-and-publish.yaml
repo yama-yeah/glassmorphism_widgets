@@ -16,3 +16,4 @@ jobs:
         EOF
     - name: Dry run
       run: pub publish --dry-run
+           dart analyze
