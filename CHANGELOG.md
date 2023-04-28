@@ -1,3 +1,6 @@
+## 0.1.5
+* fix render GlassAppBar and GlassBottomSheet
+
 ## 0.1.4
 * added heroTag in GlassFloatingActionButton
 

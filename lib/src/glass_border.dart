@@ -56,16 +56,25 @@ class _GradientPainter extends CustomPainter {
         Rect.fromLTRB(strokeWidth, strokeWidth, size.width - (strokeWidth),
             size.height - (strokeWidth)),
         Radius.circular(radius - strokeWidth));*/
+
+    Radius isMinus(double x, double y) {
+      if (x < 0 || y < 0) {
+        return const Radius.circular(0);
+      } else {
+        return Radius.elliptical(x, y);
+      }
+    }
+
     RRect innerRect2 = RRect.fromRectAndCorners(
       Rect.fromLTRB(strokeWidth, strokeWidth, size.width - (strokeWidth),
           size.height - (strokeWidth)),
-      topLeft: Radius.elliptical(borderRadius.topLeft.x - strokeWidth,
+      topLeft: isMinus(borderRadius.topLeft.x - strokeWidth,
           borderRadius.topLeft.y - strokeWidth),
-      topRight: Radius.elliptical(borderRadius.topRight.x - strokeWidth,
+      topRight: isMinus(borderRadius.topRight.x - strokeWidth,
           borderRadius.topRight.y - strokeWidth),
-      bottomLeft: Radius.elliptical(borderRadius.bottomLeft.x - strokeWidth,
+      bottomLeft: isMinus(borderRadius.bottomLeft.x - strokeWidth,
           borderRadius.bottomLeft.y - strokeWidth),
-      bottomRight: Radius.elliptical(borderRadius.bottomRight.x - strokeWidth,
+      bottomRight: isMinus(borderRadius.bottomRight.x - strokeWidth,
           borderRadius.bottomRight.y - strokeWidth),
     );
 
