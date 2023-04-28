@@ -1,3 +1,6 @@
+## 0.1.6
+* support for dart3
+
 ## 0.1.5
 * fix render GlassAppBar and GlassBottomSheet
 
