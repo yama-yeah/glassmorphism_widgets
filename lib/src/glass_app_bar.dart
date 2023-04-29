@@ -4,8 +4,8 @@ import 'glass_container.dart';
 
 /// A GlassAppBar is a Material Design app bar that is like a [AppBar] but
 /// with glass effect.
-class GlassAppBar extends StatelessWidget with PreferredSizeWidget {
-  GlassAppBar({
+class GlassAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const GlassAppBar({
     Key? key,
     this.leading,
     this.title,
