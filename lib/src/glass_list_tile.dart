@@ -39,7 +39,7 @@ class GlassListTile extends StatefulWidget {
 class _GlassListTileState extends State<GlassListTile> {
   @override
   void initState() {
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       MediaQuery.of(context).size;
     });
     super.initState();
