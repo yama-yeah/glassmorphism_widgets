@@ -138,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           GlassBottomBarItem(
-            icon: const Icon(Icons.search),
+            icon: const Icon(Icons.security),
             title: const GlassText("Search"),
           ),
           GlassBottomBarItem(
@@ -161,7 +161,7 @@ void main() {
   const targetWidget = MyApp();
 
   testGoldens(
-    'my_app',
+    'basic golden test',
     (WidgetTester tester) async {
       await loadAppFonts();
       await tester.pumpWidgetBuilder(targetWidget);
@@ -171,4 +171,58 @@ void main() {
       ]);
     },
   );
+  testGoldens('bottom sheet golden test', (WidgetTester tester) async {
+    await loadAppFonts();
+    await tester.pumpWidgetBuilder(targetWidget);
+    await tester.tap(find.text('Button'));
+    await tester.pumpAndSettle();
+    await multiScreenGolden(tester, 'my_app_screen_test_bottom_sheet',
+        devices: [
+          Device.iphone11,
+          Device.phone,
+        ]);
+  });
+
+  testGoldens('text field golden test', (WidgetTester tester) async {
+    await loadAppFonts();
+    await tester.pumpWidgetBuilder(targetWidget);
+    await tester.enterText(find.byType(TextField), 'Hello World');
+    await tester.pumpAndSettle();
+    await multiScreenGolden(tester, 'my_app_screen_test_text_field', devices: [
+      Device.iphone11,
+      Device.phone,
+    ]);
+  });
+
+  testGoldens('bottom bar golden test', (WidgetTester tester) async {
+    await loadAppFonts();
+    await tester.pumpWidgetBuilder(targetWidget);
+    await tester.tap(find.byIcon(Icons.security));
+    await tester.pumpAndSettle();
+    await multiScreenGolden(tester, 'my_app_screen_test_bottom_bar_security',
+        devices: [
+          Device.iphone11,
+          Device.phone,
+        ]);
+    await tester.tap(find.byIcon(Icons.settings));
+    await tester.pumpAndSettle();
+    await multiScreenGolden(tester, 'my_app_screen_test_bottom_bar_settings',
+        devices: [
+          Device.iphone11,
+          Device.phone,
+        ]);
+  });
+
+  testGoldens('floating action button golden test',
+      (WidgetTester tester) async {
+    await loadAppFonts();
+    await tester.pumpWidgetBuilder(targetWidget);
+    await tester.tap(find.byType(GlassFloatingActionButton));
+    await tester.pumpAndSettle();
+    await multiScreenGolden(tester, 'my_app_screen_test_floating_action_button',
+        devices: [
+          Device.iphone11,
+          Device.phone,
+        ]);
+  });
 }
