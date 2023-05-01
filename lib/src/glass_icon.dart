@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// GlassIcon is a create Icon with a glass effect.
 class GlassIcon extends StatelessWidget {
   const GlassIcon(this.icon,
       {Key? key, this.size, this.color, this.opacity = 0.5})

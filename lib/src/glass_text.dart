@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// GlassText is a create Text with a glass effect.
 class GlassText extends StatelessWidget {
   const GlassText(
     this.data, {

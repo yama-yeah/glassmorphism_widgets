@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:glassmorphism_widgets/src/glass_container.dart';
 
+/// Show a BottomSheet with a glass effect.
 void showGlassBottomSheet({
   required BuildContext context,
   Widget? child,
