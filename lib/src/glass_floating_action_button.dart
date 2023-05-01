@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'glass_container.dart';
 
+/// GlassFloatingActionButton is a create FloatingActionButton with a glass effect.
 class GlassFloatingActionButton extends StatelessWidget {
   final Function() onPressed;
   final Widget? child;

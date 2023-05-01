@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// GlassTextField is a create TextField with a glass effect.
 class GlassTextField extends StatelessWidget {
   const GlassTextField({Key? key}) : super(key: key);
 

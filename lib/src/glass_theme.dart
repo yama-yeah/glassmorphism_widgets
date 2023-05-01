@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:glassmorphism_widgets/src/glass_theme_data.dart';
 
+/// A widget that provides a GlassThemeData for its descendants.
 class GlassTheme extends StatelessWidget {
   const GlassTheme({
     Key? key,
