@@ -1,3 +1,7 @@
+# 0.2.0
+* fix:did not fit size of GlassAppBar and GlassListTile
+* add documents for widgets
+
 ## 0.1.6
 * support for dart3
 
