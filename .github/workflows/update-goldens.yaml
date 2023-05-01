@@ -1,0 +1,33 @@
+name: Publish package on push
+'on':
+  push:
+    branches:
+      - master
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'master'
+          cache: true
+      - name: Install dependencies
+        run: |
+          flutter pub get
+      - name: update goldens
+        run: |
+          flutter test --update-goldens
+      - name: Configure Git
+        run: |
+          git config --global user.name "yama-yeah"
+          git config --global user.email "b1021091@fun.ac.jp"
+      - name: Push changes
+        run: |
+          git add .
+          git commit -m "$(date '+%Y-%m-%d %H:%M:%S') update goldens"
+          git push origin main
+        
