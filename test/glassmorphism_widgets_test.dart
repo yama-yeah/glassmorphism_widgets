@@ -12,6 +12,12 @@ class MyApp extends StatelessWidget {
     return GlassApp(
       theme: GlassThemeData(
         blur: 10,
+        linearGradient: LinearGradient(
+          colors: [
+            Colors.yellowAccent.withOpacity(0.4),
+            Colors.yellow.withOpacity(0.2),
+          ],
+        ),
       ),
       home: MaterialApp(
         title: 'Flutter Demo',
@@ -48,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: Colors.pinkAccent,
       appBar: GlassAppBar(
         title: const GlassText(
-          'Glass Morphic Demo',
+          'Glassmorphic Golden Test',
           fontWeight: FontWeight.bold,
           color: Colors.white,
         ),
