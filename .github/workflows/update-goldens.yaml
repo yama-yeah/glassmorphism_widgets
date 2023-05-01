@@ -1,11 +1,11 @@
-name: Publish package on push
+name: update goldens
 'on':
   push:
     branches:
       - master
 
 jobs:
-  analyze:
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -27,7 +27,7 @@ jobs:
           git config --global user.email "b1021091@fun.ac.jp"
       - name: Push changes
         run: |
-          git add .
+          git add test
           git commit -m "$(date '+%Y-%m-%d %H:%M:%S') update goldens"
           git push origin master
         
