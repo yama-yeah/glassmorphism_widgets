@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         blur: 10,
         linearGradient: LinearGradient(
           colors: [
-            Colors.yellowAccent.withOpacity(0.4),
+            Colors.yellowAccent.withOpacity(0.8),
             Colors.yellow.withOpacity(0.2),
           ],
         ),
