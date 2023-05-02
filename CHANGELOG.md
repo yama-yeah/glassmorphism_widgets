@@ -1,3 +1,7 @@
+
+## 0.2.2
+* formated codes
+
 ## 0.2.1
 * refactored codes
 
