@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image:  google/dart:beta
+      image:  dart:3.0.0-417.3.beta
     steps:
     - uses: actions/checkout@v1
     - name: Setup credentials
