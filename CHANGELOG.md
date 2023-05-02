@@ -1,3 +1,6 @@
+## 0.2.1
+* refactored codes
+
 ## 0.2.0
 * fix:did not fit size of GlassAppBar and GlassListTile
 * add documents for widgets
