@@ -7,10 +7,13 @@ name: Publish package on push
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image:  dart:3.0.0-417.3.beta
+    
     steps:
     - uses: actions/checkout@v1
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: 'master'
+        cache: true
     - name: Setup credentials
       run: | 
         mkdir -p ~/.pub-cache 
@@ -18,4 +21,4 @@ jobs:
         ${{ secrets.CREDENTIAL_JSON }}
         EOF
     - name: Publish package
-      run: dart pub publish -f
+      run: flutter pub publish -f
