@@ -18,4 +18,4 @@ jobs:
         ${{ secrets.CREDENTIAL_JSON }}
         EOF
     - name: Publish package
-      run: pub publish -f
+      run: dart pub publish -f
