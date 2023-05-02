@@ -43,6 +43,7 @@ class _GlassAppBarState extends State<GlassAppBar> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      //ignore: unnecessary_statements
       MediaQuery.of(context).size;
     });
     super.initState();

@@ -60,10 +60,10 @@ class GlassContainer extends StatefulWidget {
   final BoxConstraints? constraints;
 
   @override
-  _GlassContainerState createState() => _GlassContainerState();
+  GlassContainerState createState() => GlassContainerState();
 }
 
-class _GlassContainerState extends State<GlassContainer> {
+class GlassContainerState extends State<GlassContainer> {
   final GlobalKey _contentKey = GlobalKey();
 
   BuildContext? contentBox;

@@ -33,13 +33,14 @@ class GlassListTile extends StatefulWidget {
   final void Function()? onTap;
 
   @override
-  _GlassListTileState createState() => _GlassListTileState();
+  GlassListTileState createState() => GlassListTileState();
 }
 
-class _GlassListTileState extends State<GlassListTile> {
+class GlassListTileState extends State<GlassListTile> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      //ignore: unnecessary_statements
       MediaQuery.of(context).size;
     });
     super.initState();

@@ -69,37 +69,37 @@ class GlassBottomBar extends StatelessWidget {
               curve: curve,
               duration: duration,
               builder: (context, t, _) {
-                final _selectedColor = item.selectedColor ??
+                final selectedColor = item.selectedColor ??
                     selectedItemColor ??
                     theme.primaryColor;
 
-                final _unselectedColor = item.unselectedColor ??
+                final unselectedColor = item.unselectedColor ??
                     unselectedItemColor ??
                     theme.iconTheme.color;
 
-                final _selectedGradient = item.selectedGradient ??
+                final selectedGradient = item.selectedGradient ??
                     GlassTheme.of(context).linearGradient;
 
-                final _unselectedGradient = item.unselectedGradient ??
+                final unselectedGradient = item.unselectedGradient ??
                     GlassTheme.of(context).linearGradient;
 
-                final _selectedBorderGradient = item.selectedBorderGradient ??
+                final selectedBorderGradient = item.selectedBorderGradient ??
                     GlassTheme.of(context).borderGradient;
 
-                final _unselectedBorderGradient =
+                final unselectedBorderGradient =
                     item.unselectedBorderGradient ??
                         GlassTheme.of(context).borderGradient;
 
                 return GlassContainer(
                   linearGradient: LinearGradient.lerp(
-                      _unselectedGradient, _selectedGradient, t),
+                      unselectedGradient, selectedGradient, t),
                   alignment: Alignment.bottomLeft,
                   radius: item.radius,
                   border: item.border,
                   blur: item.blur,
                   borderRadius: item.borderRadius,
                   borderGradient: LinearGradient.lerp(
-                      _unselectedBorderGradient, _selectedBorderGradient, t),
+                      unselectedBorderGradient, selectedBorderGradient, t),
                   child: Material(
                     /*color: Color.lerp(
                           _selectedColor.withOpacity(0.0),
@@ -113,10 +113,10 @@ class GlassBottomBar extends StatelessWidget {
                     child: InkWell(
                       onTap: () => onTap?.call(items.indexOf(item)),
                       customBorder: itemShape,
-                      focusColor: _selectedColor.withOpacity(0.1),
-                      highlightColor: _selectedColor.withOpacity(0.1),
-                      splashColor: _selectedColor.withOpacity(0.1),
-                      hoverColor: _selectedColor.withOpacity(0.1),
+                      focusColor: selectedColor.withOpacity(0.1),
+                      highlightColor: selectedColor.withOpacity(0.1),
+                      splashColor: selectedColor.withOpacity(0.1),
+                      hoverColor: selectedColor.withOpacity(0.1),
                       child: Padding(
                         padding: itemPadding -
                             (Directionality.of(context) == TextDirection.ltr
@@ -127,9 +127,9 @@ class GlassBottomBar extends StatelessWidget {
                             IconTheme(
                               data: IconThemeData(
                                 color: Color.lerp(
-                                    _unselectedColor?.withOpacity(
+                                    unselectedColor?.withOpacity(
                                         item.unselectedIconColorOpacity),
-                                    _selectedColor.withOpacity(
+                                    selectedColor.withOpacity(
                                         item.selectedIconColorOpacity),
                                     t),
                                 size: 24,
@@ -161,8 +161,8 @@ class GlassBottomBar extends StatelessWidget {
                                       style: TextStyle(
                                         //color: Colors.red,
                                         color: Color.lerp(
-                                            _selectedColor.withOpacity(0.0),
-                                            _selectedColor,
+                                            selectedColor.withOpacity(0.0),
+                                            selectedColor,
                                             t),
                                         fontWeight: FontWeight.w600,
                                       ),
