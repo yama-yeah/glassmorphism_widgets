@@ -22,6 +22,9 @@ class GlassDrawer extends StatelessWidget {
             padding: const EdgeInsets.all(0),
             children: [
               DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.1),
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -43,9 +46,6 @@ class GlassDrawer extends StatelessWidget {
                       opacity: 0.25,
                     ),
                   ],
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.1),
                 ),
               ),
               ListView.separated(
