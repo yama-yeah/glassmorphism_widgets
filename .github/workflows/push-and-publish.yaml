@@ -16,8 +16,8 @@ jobs:
         cache: true
     - name: Setup credentials
       run: | 
-        mkdir -p ~/.pub-cache 
-        cat <<EOF > ~/.pub-cache/credentials.json
+        mkdir -p ~/.config/dart
+        cat <<EOF > ~/.config/dart/pub-credentials.json
         ${{ secrets.CREDENTIAL_JSON }}
         EOF
     - name: Publish package
