@@ -14,12 +14,6 @@ jobs:
         with:
           channel: 'master'
           cache: true
-      - name: Setup credentials
-        run: | 
-          mkdir -p ~/.pub-cache 
-          cat <<EOF > ~/.pub-cache/credentials.json
-          ${{ secrets.CREDENTIAL_JSON }}
-              EOF
       - name: Install dependencies
         run: |
           flutter pub get
